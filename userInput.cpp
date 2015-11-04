@@ -11,14 +11,17 @@ string Input::inputData(const string &fieldName, const string &expression)
     string data;
 
     cout << "Enter " << fieldName << ": ";
-    cin >> data;
+    cin.ignore(INT_MAX, '\n');
+    getline(cin, data);
 
     // validate the data
     while ( !(validate(data, expression)))
     {
         cout << "Invalid " << fieldName << ".\n";
         cout << "Enter " << fieldName << ": ";
-        cin >> data;
+
+        cin.clear();
+        getline(cin, data);
     }
     return data;
 }

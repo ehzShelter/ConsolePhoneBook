@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <limits.h>
 #include <regex>
 #include <stdlib.h>
 #include <string.h>
