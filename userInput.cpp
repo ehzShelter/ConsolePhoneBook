@@ -11,7 +11,6 @@ string Input::inputData(const string &fieldName, const string &expression)
     string data;
 
     cout << "Enter " << fieldName << ": ";
-    cin.ignore(INT_MAX, '\n');
     getline(cin, data);
 
     // validate the data
@@ -20,7 +19,6 @@ string Input::inputData(const string &fieldName, const string &expression)
         cout << "Invalid " << fieldName << ".\n";
         cout << "Enter " << fieldName << ": ";
 
-        cin.clear();
         getline(cin, data);
     }
     return data;
@@ -29,8 +27,10 @@ string Input::inputData(const string &fieldName, const string &expression)
 void Input::setName(void)
 {
     string userName;
-    cout << "Enter Name: ";
-    cin >> userName;
+    cout << "Enter name: ";
+
+    getline(cin, userName);
+
     this->name = userName;
 }
 

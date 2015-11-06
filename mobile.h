@@ -8,7 +8,9 @@
 #include <unistd.h>
 #include <signal.h>
 #include <vector>
+
 #include "userInput.h"
+
 #define CREDIT_LIMIT 500.00
 
 using namespace std;

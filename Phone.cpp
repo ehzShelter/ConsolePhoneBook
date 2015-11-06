@@ -23,7 +23,7 @@ void Phone::findAndChange(void)
 {
 	string nameParam;
 	cout << "Please give the name which you want to search: ";
-	cin >> nameParam;
+	getline(cin ,nameParam);
 	for (it = object.begin(); it != object.end(); ++it)
 	{
 		if (it->getName() == nameParam)
@@ -34,6 +34,7 @@ void Phone::findAndChange(void)
 			cout << "Want to change phone number??" << "(y/n)" << endl;
 			char choice;
 			cin >> choice;
+            cin.ignore(INT_MAX,'\n');
 			switch (choice)
 			{
 				case 'y':

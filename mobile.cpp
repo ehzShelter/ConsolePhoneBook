@@ -84,15 +84,17 @@ void mobile::callPerson(mobile& person)
 
 void mobile::addCredit(void)
 {
+    double addCredit;
 	cout << "Please give the amount of Money: \n";
-	cin >> credit;
-	if (credit > CREDIT_LIMIT)
+	cin >> addCredit;
+	if (addCredit > CREDIT_LIMIT)
 	{
 		cout << "You cannot more than 500tk\n";
 	}
 	else
 	{
-		cout << "Credit " << credit << " succesfully added" << endl;
+        credit += addCredit;
+		cout << "Credit " << addCredit << " succesfully added" << endl;
 	}
 }
 
