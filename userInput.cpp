@@ -26,12 +26,7 @@ string Input::inputData(const string &fieldName, const string &expression)
 
 void Input::setName(void)
 {
-    string userName;
-    cout << "Enter name: ";
-
-    getline(cin, userName);
-
-    this->name = userName;
+    this->name = inputData("name", "([\\S|\\D][a-zA-Z\\s]*)");
 }
 
 void Input::setNumber(void)

@@ -22,7 +22,7 @@ int main(void)
 			<< " 5 : Want to add credit\n"
 			<< " 6 : Want to know your credit\n"
 			<< " 7 : History\n"
-			<< " 0 or character or string to quit the programm\n\n";
+			<< " 0 or character or string to quit the program\n\n";
 
 		cout << "Command: ";
 		cin >> choice;

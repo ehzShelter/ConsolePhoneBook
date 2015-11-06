@@ -110,10 +110,17 @@ void mobile::addCallHistory(mobile& client)
 
 void mobile::viewHistory(void)
 {
-	for (it = callHistory.begin(); it != callHistory.end(); ++it)
-	{
-		cout << "Number called: " << it->getNumber()
-			<< " Credit: " << it->getCredit()
-			<< " time of call: " << it->date() << endl;
-	}
+    if (callHistory.empty())
+    {
+        cout << "No history to show\n";
+    }
+    else
+    {
+        for (it = callHistory.begin(); it != callHistory.end(); ++it)
+        {
+            cout << "Number called: " << it->getNumber()
+                << " Credit: " << it->getCredit()
+                << " time of call: " << it->date() << endl;
+        }
+    }
 }
