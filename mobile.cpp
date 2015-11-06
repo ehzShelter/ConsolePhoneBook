@@ -106,6 +106,16 @@ double mobile::getCredit(void)
 void mobile::addCallHistory(mobile& client)
 {
 	callHistory.push_back(client);
+    ofstream outputHistoryFile("history.txt", ios::app);
+
+    if ( !outputHistoryFile )
+    {
+        cerr << "File could not be opened" << endl;
+        return;
+    }
+
+    outputHistoryFile << "Number called: " << getNumber() << endl
+                    << "Time of call: " << date() << endl;
 }
 
 void mobile::viewHistory(void)
@@ -118,9 +128,8 @@ void mobile::viewHistory(void)
     {
         for (it = callHistory.begin(); it != callHistory.end(); ++it)
         {
-            cout << "Number called: " << it->getNumber()
-                << " Credit: " << it->getCredit()
-                << " time of call: " << it->date() << endl;
+            cout << "Number called: " << it->getNumber() << endl
+                << "Time of call: " << it->date() << endl;
         }
     }
 }

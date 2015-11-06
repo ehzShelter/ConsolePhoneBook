@@ -61,12 +61,23 @@ void Phone::addNewContact(Phone& PhoneDairy)
 	setName();
 	setNumber();
 	object.push_back(PhoneDairy);
+
+    ofstream addContactFile("contact.txt", ios::app);
+
+    if ( !addContactFile )
+    {
+        cerr << "File could not be opened" << endl;
+        return;
+    }
+
+    addContactFile << left << setw(40) << getName() << left
+        << getNumber() << endl;
+
 	cout << "New contact is added successfully\n";
 }
 
 void Phone::printException(void)
 {
-    fflush(stdout);
 	cout << "you didn't press expected key :(" << endl;
 	cout << "\a ";
 }

@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <iomanip>
 #include <vector>
 #include "userInput.h"
 using namespace std;

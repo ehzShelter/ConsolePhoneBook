@@ -26,7 +26,7 @@ string Input::inputData(const string &fieldName, const string &expression)
 
 void Input::setName(void)
 {
-    this->name = inputData("name", "([\\S|\\D][a-zA-Z\\s]*)");
+    this->name = inputData("name", "(^[a-zA-Z][a-zA-Z\\.\\,\\-\\'\\s]*)");
 }
 
 void Input::setNumber(void)
