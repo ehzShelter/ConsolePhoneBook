@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CREDIT_LIMIT	mobile.h	14;"	d
+FIRST_H	mobile.h	2;"	d
+INPUT_H	userInput.h	2;"	d
+Input	userInput.h	/^class Input$/;"	c
+Phone	Phone.h	/^class Phone : public Input$/;"	c
+SECOND_H	Phone.h	3;"	d
+addCallHistory	mobile.cpp	/^void mobile::addCallHistory(mobile& client)$/;"	f	class:mobile
+addCredit	mobile.cpp	/^void mobile::addCredit(void)$/;"	f	class:mobile
+addNewContact	Phone.cpp	/^void Phone::addNewContact(Phone& PhoneDairy)$/;"	f	class:Phone
+bill	mobile.cpp	/^void mobile::bill(void)$/;"	f	class:mobile
+callHistory	mobile.h	/^	vector< mobile >callHistory;$/;"	m	class:mobile
+callPerson	mobile.cpp	/^void mobile::callPerson(mobile& person)$/;"	f	class:mobile
+callTime	mobile.cpp	/^int mobile::callTime(void)$/;"	f	class:mobile
+credit	mobile.h	/^	double credit = 20.00;$/;"	m	class:mobile
+date	mobile.cpp	/^string mobile::date(void)$/;"	f	class:mobile
+eraseEntireBook	Phone.cpp	/^void Phone::eraseEntireBook(void)$/;"	f	class:Phone
+findAndChange	Phone.cpp	/^void Phone::findAndChange(void)$/;"	f	class:Phone
+getCredit	mobile.cpp	/^double mobile::getCredit(void)$/;"	f	class:mobile
+getName	userInput.cpp	/^string Input::getName(void)$/;"	f	class:Input
+getNumber	userInput.cpp	/^string Input::getNumber(void)$/;"	f	class:Input
+inputData	userInput.cpp	/^string Input::inputData(const string &fieldName, const string &expression)$/;"	f	class:Input
+it	Phone.h	/^	vector< Phone >::iterator it;$/;"	m	class:Phone
+it	mobile.h	/^	vector< mobile >::iterator it;$/;"	m	class:mobile
+load	mobile.cpp	/^void mobile::load(void)$/;"	f	class:mobile
+main	main.cpp	/^int main(void)$/;"	f
+mobile	mobile.h	/^class mobile : public Input$/;"	c
+name	userInput.h	/^    string name;$/;"	m	class:Input
+number	userInput.h	/^    string number;$/;"	m	class:Input
+object	Phone.h	/^	vector< Phone >object;$/;"	m	class:Phone
+printException	Phone.cpp	/^void Phone::printException(void)$/;"	f	class:Phone
+setName	userInput.cpp	/^void Input::setName(void)$/;"	f	class:Input
+setNumber	userInput.cpp	/^void Input::setNumber(void)$/;"	f	class:Input
+stop	mobile.cpp	/^bool stop;$/;"	v
+totalSecond	mobile.cpp	/^int totalSecond;$/;"	v
+validate	userInput.cpp	/^bool Input::validate(const string &data, const string &expression)$/;"	f	class:Input
+viewHistory	mobile.cpp	/^void mobile::viewHistory(void)$/;"	f	class:mobile
