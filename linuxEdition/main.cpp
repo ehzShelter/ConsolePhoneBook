@@ -1,5 +1,6 @@
 #include "mobile.h"
 #include "Phone.h"
+#include "person.h"
 #include "userInput.h"
 #include <vector>
 #include <limits.h>
@@ -8,6 +9,9 @@ int main(void)
 {
 	mobile client;
 	Phone phoneRecord;
+    person human;
+
+    client.fileRW(client);
 
     int choice;
 	cout << "Please press desired key to continue ... \n\n ";
@@ -22,6 +26,12 @@ int main(void)
 			<< " 5 : Want to add credit\n"
 			<< " 6 : Want to know your credit\n"
 			<< " 7 : History\n"
+            << " 8 : Register new Person\n"
+            << " 9 : call by name\n"
+        	<< " 10: total cost of last month\n"
+            << " 11: Average length of call\n"
+            << " 12: TotalCredit\n"
+            << " 13: Favorite\n"
 			<< " 0 or any char || string : quit\n\n";
 
 		cout << "Command: ";
@@ -29,13 +39,19 @@ int main(void)
         cin.ignore(INT_MAX, '\n');
 		switch (choice)
 		{
-			case 1: client.callPerson(client); break;
+			case 1: client.callPerson(client,1); break;
 			case 2: phoneRecord.addNewContact(phoneRecord); break;
 			case 3: phoneRecord.findAndChange(); break;
 			case 4: phoneRecord.eraseEntireBook(); break;
 			case 5: client.addCredit(); break;
 			case 6: cout << "Your credit: " << client.getCredit() << " tk"; break;
 			case 7: client.viewHistory(); break;
+            case 8: human.registerPerson(human); break;
+            case 9: client.callbyName(client); break;
+            case 10: human.cost(); break;
+            case 11: human.averageCallLength(); break;
+            case 12: human.totalCredit(); break;
+            case 13: client.favorite(); break;
 			case 0: break;
 			default: phoneRecord.printException(); break;
 		}

@@ -18,9 +18,11 @@ private:
 
 public:
 	void findAndChange(void);
+    void callbyName(void);
 	void eraseEntireBook(void);
 	void addNewContact(Phone&);
 	void printException(void);
+    void fileRW(string &);
 };
 
 #endif

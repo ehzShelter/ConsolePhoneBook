@@ -23,7 +23,8 @@ void Phone::findAndChange(void)
 {
 	string nameParam;
 	cout << "Please give the name which you want to search: ";
-	getline(cin ,nameParam);
+    cin >> nameParam;
+
 	for (it = object.begin(); it != object.end(); ++it)
 	{
 		if (it->getName() == nameParam)
@@ -56,13 +57,14 @@ void Phone::findAndChange(void)
 	}
 }
 
+
 void Phone::addNewContact(Phone& PhoneDairy)
 {
 	setName();
 	setNumber();
 	object.push_back(PhoneDairy);
 
-    ofstream addContactFile("contact.txt", ios::app);
+    ofstream addContactFile("contact.txt", ios::app | ios::in | ios::out);
 
     if ( !addContactFile )
     {
