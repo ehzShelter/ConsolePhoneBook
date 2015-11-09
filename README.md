@@ -7,6 +7,7 @@
 ## We sanitize user value in more robust way
 ## The Project is deveoped using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
 ## The Project has no memory-leak check with Valgring(a handy memory debugger)
+## Finally, The code is pushed on github, you can check the code and report bugsj
 
 
 ## Project in Progress(RC editions)
