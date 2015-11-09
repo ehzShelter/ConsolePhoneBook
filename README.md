@@ -1,6 +1,6 @@
 ## This is a console PhoneBook programm
 ## This is built on C++, also featured some C++11 functionality
-## Such as Lambda, Regular Expression, Boost Library
+## Such as Lambda, Regular Expression, Boost Library, OOP
 ## Moreover STL, MAP, DYNAMIC Vector
 ## Used file for persistent data(In need of databases too)
 ## We measure our call duration using single handle Using SIGINT
@@ -9,6 +9,7 @@
 ## The Project has no memory-leak check with Valgring(a handy memory debugger)
 ## Finally, The code is pushed on github, you can check the code and report bugsj
 
+>> We will introduce the header aka functions prototypes only
 
 ## Project in Progress(RC editions)
 
