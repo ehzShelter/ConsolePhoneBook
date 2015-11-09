@@ -8,6 +8,10 @@
 ## The Project is deveoped using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
 ## The Project has no memory-leak check with Valgring(a handy memory debugger)
 ## Finally, The code is pushed on github, you can check the code and report bugsj
+## The Programm has two edition >Linux >Windows will run on mac(POSIX) as well
+
+>> For Windows just used windows.h, for linux used unistd.h
+
 
 >> We will introduce the header aka functions prototypes only
 
