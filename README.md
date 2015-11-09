@@ -147,6 +147,13 @@ Lines       Words        Bytes       Modules
 >    };
 
 
+## Running in Linux
+
+![Running Programm](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/running_program.png)
+
+![History](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/history.png)
+
+![Memory Management](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/no_memoryLeak.png)
 
 ## Class one
 >    class mobile : public Input
@@ -265,4 +272,8 @@ Lines       Words        Bytes       Modules
 
 >    };
 
+## Windows Screenshoot
+>Fancy
+
+![Windows](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/VisualStudio.png)
 
