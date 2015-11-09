@@ -1,0 +1,68 @@
+#include "mobile.h"
+#include "Phone.h"
+#include "person.h"
+#include "userInput.h"
+#include <vector>
+#include <limits.h>
+
+int main(void)
+{
+	mobile client;
+	Phone phoneRecord;
+    person human;
+
+    client.fileRW(client);
+
+    int choice;
+	cout << "Please press desired key to continue ... \n\n ";
+
+	do
+	{
+		cout << "Please avoid pressing bad character or string\n"
+			<< "\nMENU\n\n"
+			<< " 1 : for phone call\n"
+			<< " 2 : add new contact\n"
+			<< " 3 : find and change name\n"
+			<< " 4 : Caution! Delete entire Phonebook\n"
+			<< " 5 : Want to add credit\n"
+			<< " 6 : Want to know your credit\n"
+			<< " 7 : History\n"
+            << " 8 : Register new Person\n"
+            << " 9 : call by name\n"
+        	<< " 10: total cost of last month\n"
+            << " 11: Average length of call\n"
+            << " 12: TotalCredit\n"
+            << " 13: Favorite\n"
+			<< " 0 : quit\n\n";
+
+
+		cout << "Command: ";
+		cin >> choice;
+		cin.ignore(INT_MAX, '\n');
+		switch (choice)
+		{
+			case 1: client.callPerson(client,1); break;
+			case 2: phoneRecord.addNewContact(phoneRecord); break;
+			case 3: phoneRecord.findAndChange(); break;
+			case 4: phoneRecord.eraseEntireBook(); break;
+			case 5: client.addCredit(); break;
+			case 6: cout << "Your credit: " << client.getCredit() << " tk"; break;
+			case 7: client.viewHistory(); break;
+            case 8: human.registerPerson(human); break;
+            case 9: client.callbyName(client); break;
+            case 10: human.cost(); break;
+            case 11: human.averageCallLength(); break;
+            case 12: human.totalCredit(); break;
+            case 13: client.favorite(); break;
+			case 0: break;
+			
+			default: phoneRecord.printException(); break; 
+			
+
+
+		}
+	}
+	while (choice != 0);
+
+	return 0;
+}
