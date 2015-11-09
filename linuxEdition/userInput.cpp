@@ -11,7 +11,7 @@ string Input::inputData(const string &fieldName, const string &expression)
     string data;
 
     cout << "Enter " << fieldName << ": ";
-    cin >> data;
+    getline(cin, data);
 
     // validate the data
     while ( !(validate(data, expression)))
@@ -19,7 +19,7 @@ string Input::inputData(const string &fieldName, const string &expression)
         cout << "Invalid " << fieldName << ".\n";
         cout << "Enter " << fieldName << ": ";
 
-        cin >> data;
+        getline(cin, data);
     }
     return data;
 }
