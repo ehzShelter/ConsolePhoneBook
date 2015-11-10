@@ -1,8 +1,10 @@
 #include "mobile.h"
 #include "userInput.h"
 
+// Stops the call time
 bool stop;
 
+// Calculates bill
 void mobile::bill(void)
 {
 	float tk;
@@ -14,13 +16,29 @@ void mobile::bill(void)
 	cout << "Your bill is tk. " << tk << endl;
 }
 
+// Call loading situation
 void mobile::load(void)
 {
+	cout << "*\n*\n*" << endl;
+	cout << "*********" << endl;
+	for (int i = 0; i<10; i++)
+	{
+		if (i == 4)
+		{
+			cout << "********* \t" << endl;
+		}
+		else if (i == 5 || i == 7 || i == 9)
+		{
+			cout << "* " << (char)219 << " " << (char)219 << " " << (char)219 << " *" << endl;
+		}
+		else
+			cout << "*       *" << endl;
+	}
+	cout << "*********" << endl;
+	Sleep(2000);
 	system("cls");
 
 	system("color 0C");
-
-
 
 	cout << "\n\n\n\n\n\n \t\t\t\t";
 	cout << "Call loading... \n" << endl;
@@ -38,6 +56,7 @@ void mobile::load(void)
 
 }
 
+// Show call time from system
 string mobile::date(void)
 {
 	time_t now = time(0);
@@ -45,6 +64,7 @@ string mobile::date(void)
 	return dt;
 }
 
+// this function calculate user exact time
 int mobile::callTime(void)
 {
 	int second = 0;
@@ -52,10 +72,18 @@ int mobile::callTime(void)
 
 	while (true)
 	{
+		// Sleep pauses execution
+		// Sleep takes parameter as microseconds
 		Sleep(1000);
 		++second;
 		++totalSecond;
-
+		// lamda function C++11 
+		// Lamda function has no function name
+		// Anonymous function, which literally can invoke function in the parameter
+		// which reduants extra function call
+		// SIGINT equivalent CTRL-C as parameter
+		// which waits until user press control-c to stop
+		// This is like a stop watch which literally calculate exact time
 		signal(SIGINT, [](int sig) { if (sig == SIGINT) { stop = true; } });
 
 		if (stop == true)
@@ -67,6 +95,7 @@ int mobile::callTime(void)
 	return second;
 }
 
+// Call to the person
 void mobile::callPerson(mobile& person, int choice)
 {
     if (choice == 1)
@@ -155,6 +184,7 @@ void mobile::callbyName(mobile& Human)
 	cout << "Please give the name which you want to call: ";
     cin >> nameParam;
 
+	// Iterator, which iterate over the file
 	for (it = contact.begin(); it != contact.end(); ++it)
 	{
 		if (it->getName() == nameParam)
@@ -219,6 +249,7 @@ void mobile::favorite(void)
         it1 = it2;
     }
     cout << "Your Favourite Number: " << it1-> first << endl;
+	// clear the buffered memory
     m.clear();
     a.clear();
 }
