@@ -10,6 +10,24 @@
 ## Finally, The code is pushed on github, you can check the code and report bugsj
 ## The Program has two edition >Linux >Windows will run on mac(POSIX) as well
 ## The program is open-sourced, any good suggestions will be highly appreciated
+
+# NOTE:
+
+To compile in Linux use Makefile, Make sure you are using clang++ 3.6.2 compiler
+or g++ 4.9 and
+other defendencies
+
+>> Just run
+
+    make
+
+
+To clear the object files, run
+
+    make clean
+
+To compile in Windows, Make sure you compiler must support ISO C++11 Standard
+
 >> Github URL is given below
 
 
@@ -49,6 +67,7 @@ Lines       Words        Bytes       Modules
 ## Programm main function has 13(thirteen) different cases for
 ###    different purposes
 
+ This is actually a part of a main program
 
 >	case 1: client.callPerson(client,1); break;
 
@@ -277,8 +296,16 @@ Lines       Words        Bytes       Modules
 
 >    };
 
+Documentation:
+
+To match user input, we have used regex_match("String", "Matching pattern) which is under <regex> header
+Most of the time, we have used object reference to wor kthe programm perfectly
+
 ## Windows Screenshoot
 >Fancy
 
 ![Windows](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/VisualStudio.png)
+
+
+## Any query, email me, mechezawad@outlook.com, for bugs, crete issues in Github
 
