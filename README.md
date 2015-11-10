@@ -307,5 +307,5 @@ Most of the time, we have used object reference to wor kthe programm perfectly
 ![Windows](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/VisualStudio.png)
 
 
-## Any query, email me, mechezawad@outlook.com, for bugs, crete issues in Github
+## Any query, email me, mechezawad@outlook.com, for bugs, create issues in Github
 
