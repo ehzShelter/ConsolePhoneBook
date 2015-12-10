@@ -67,7 +67,7 @@ Lines       Words        Bytes       Modules
 
   719      1780          14288 total
 
-## Programm main function has 13(thirteen) different cases for
+## Programm main function has 14(fourteen) different cases for
 ###    different purposes
 
  This is actually a part of a main program
