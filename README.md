@@ -1,21 +1,24 @@
-## This is a console PhoneBook programm
-## This is built on C++, also featured some C++11 functionality
-## Such as Lambda, Regular Expression, Boost Library, OOP
-## Moreover STL, MAP, DYNAMIC Vector
-## Used file for persistent data(In need of databases too)
-## We measure our call duration using single handle Using SIGINT
-## We sanitize user value in more robust way
-## The Project is deveoped using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
-## The Project has no memory-leak check with Valgring(a handy memory debugger)
-## Finally, The code is pushed on github, you can check the code and report bugsj
-## The Program has two edition >Linux >Windows will run on mac(POSIX) as well
-## The program is open-sourced, any good suggestions will be highly appreciated
+### This is a console PhoneBook programm
+### This is built on C++, also featured some C++11 functionality
+### Such as Lambda, Regular Expression, Boost Library, OOP
+### Moreover STL, MAP, DYNAMIC Vector, String Class
+### Used file for persistent data(In need of databases too)
+### We measure our call duration using single handle Using SIGINT
+### We sanitize user value in more robust way
+### With manual Exception Handling
+### The Project is deveoped using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
+### The Project has no memory-leak check with Valgring(a handy memory debugger)
+### Finally, The code is pushed on github, you can check the code and report bugsj
+### The Program has two edition >Linux >Windows will run on mac(POSIX) as well
+### The program is open-sourced, any good suggestions will be highly appreciated
 
-# NOTE:
+## NOTE:
 
 To compile in Linux use Makefile, Make sure you are using clang++ 3.6.2 compiler
-or g++ 4.9 and
+or GCC 4.9.3 and
 other defendencies
+
+##### Makefile has been included for LinuxEdition
 
 >> Just run
 
@@ -44,25 +47,25 @@ Lines       Words        Bytes       Modules
 
    28        51           495         Phone.h
 
-   45        88           816         mobile.h
+   47        91           816         mobile.h
 
    33        62           613         person.h
 
    47        86           904         userInput.h
 
-   85       243          1798         Phone.cpp
+   84       234          1747         Phone.cpp
 
    62       227          1783         main.cpp
 
-  214       571          4153         mobile.cpp
+  229       617          4153         mobile.cpp
 
-   98       234          2045         person.cpp
+   97       234          2043         person.cpp
 
-   88       171          1681         userInput.cpp
+   90       171          1697         userInput.cpp
 
 ..............................................
 
-  700      1733          14288 total
+  719      1780          14288 total
 
 ## Programm main function has 13(thirteen) different cases for
 ###    different purposes
@@ -87,13 +90,15 @@ Lines       Words        Bytes       Modules
 
 >   case 9: client.callbyName(client); break;
 
->   case 10: human.cost(); break;
+>   case 10: client.sendText(); break;
 
->   case 11: human.averageCallLength(); break;
+>   case 11: human.cost(); break;
 
->   case 12: human.totalCredit(); break;
+>   case 12: human.averageCallLength(); break;
 
->   case 13: client.favorite(); break;
+>   case 13: human.totalCredit(); break;
+
+>   case 14: client.favorite(); break;
 
 >	case 0: break;
 
@@ -194,11 +199,13 @@ Lines       Words        Bytes       Modules
 
 >        vector< mobile >contact;
 
+>        vector< mobile > message;
+
 >        vector< mobile >::iterator it;
 
->        map<string, int> m;
+>        map<string, int> myMap;
 
->        vector<string> a;
+>        vector<string> numberKey;
 
 >
 >    public:
@@ -226,6 +233,8 @@ Lines       Words        Bytes       Modules
 >        void callbyName(mobile&);
 
 >        void favorite(void);
+
+>        sendText(mobile&);
 
 >    };
 
@@ -301,7 +310,9 @@ Documentation:
 To match user input, we have used regex_match("String", "Matching pattern) which is under <regex> header
 Most of the time, we have used object reference to wor kthe programm perfectly
 
-## Windows Screenshoot
+Modern C++11 feature auto, range-based loop, regex....etc
+
+#### Windows Screenshoot
 >Fancy
 
 ![Windows](https://github.com/ehzShelter/ConsolePhoneBook/blob/master/VisualStudio.png)

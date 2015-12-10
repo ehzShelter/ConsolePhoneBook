@@ -23,9 +23,13 @@ private:
 	double credit = 200.00;
 	vector< mobile >callHistory;
     vector< mobile >contact;
+	vector< mobile >message;
 	vector< mobile >::iterator it;
-    map<string, int> m;
-    vector<string> a;
+	map<string, int> myMap;
+	vector<string> numberKey;
+
+
+
 
 public:
 	void load(void);
@@ -40,6 +44,7 @@ public:
     void fileRW(mobile&);
     void callbyName(mobile&);
     void favorite(void);
+	void sendText(mobile&);
 };
 
 #endif

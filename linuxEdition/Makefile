@@ -6,7 +6,7 @@
 CXX = clang++
 
 # flags to pass compiler
-CXXFLAGS = -ggdb3 -O0 -std=c++11 -stdlib=libc++ -Wall -Werror -pedantic-errors
+CXXFLAGS = -ggdb3 -O0 -std=c++14 -stdlib=libc++ -Wall -Werror -pedantic-errors
 
 # flags for the CPP  PreProcessor
 CPPFLAGS =

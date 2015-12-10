@@ -4,7 +4,6 @@
 #pragma once
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
 #include <string>
 #include <ctime>
 #include <unistd.h>
@@ -12,6 +11,7 @@
 #include <vector>
 #include <map>
 #include "userInput.h"
+
 using namespace std;
 
 #define CREDIT_LIMIT 500.00
@@ -23,9 +23,10 @@ private:
 	double credit = 200.00;
 	vector< mobile >callHistory;
     vector< mobile >contact;
+    vector< mobile >message;
 	vector< mobile >::iterator it;
-    map<string, int> m;
-    vector<string> a;
+    map<string, int> myMap;
+    vector<string> numberKey;
 
 public:
 	void load(void);
@@ -40,6 +41,7 @@ public:
     void fileRW(mobile&);
     void callbyName(mobile&);
     void favorite(void);
+    void sendText(mobile&);
 };
 
 #endif

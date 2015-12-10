@@ -64,7 +64,6 @@ void person::registerPerson(person& instance)
         credit = credit + CREDIT;
 
         cout << "New registered person record has been added\n";
-
     }
 }
 

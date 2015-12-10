@@ -28,10 +28,11 @@ int main(void)
 			<< " 7 : History\n"
             << " 8 : Register new Person\n"
             << " 9 : call by name\n"
-        	<< " 10: total cost of last month\n"
-            << " 11: Average length of call\n"
-            << " 12: TotalCredit\n"
-            << " 13: Favorite\n"
+            << " 10: text messaging\n"
+        	<< " 11: total cost of last month\n"
+            << " 12: Average length of call\n"
+            << " 13: TotalCredit\n"
+            << " 14: Favorite\n"
 			<< " 0 or any char || string : quit\n\n";
 
 		cout << "Command: ";
@@ -48,10 +49,11 @@ int main(void)
 			case 7: client.viewHistory(); break;
             case 8: human.registerPerson(human); break;
             case 9: client.callbyName(client); break;
-            case 10: human.cost(); break;
-            case 11: human.averageCallLength(); break;
-            case 12: human.totalCredit(); break;
-            case 13: client.favorite(); break;
+            case 10: client.sendText(client); break;
+            case 11: human.cost(); break;
+            case 12: human.averageCallLength(); break;
+            case 13: human.totalCredit(); break;
+            case 14: client.favorite(); break;
 			case 0: break;
 			default: phoneRecord.printException(); break;
 		}

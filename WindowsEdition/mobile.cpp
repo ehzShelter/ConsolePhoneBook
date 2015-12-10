@@ -7,7 +7,7 @@ bool stop;
 // Calculates bill
 void mobile::bill(void)
 {
-	float tk;
+	double tk;
 	int sec;
 	sec = callTime();
 	cout << "you have talked " << sec << " sec" << endl;
@@ -60,7 +60,7 @@ void mobile::load(void)
 string mobile::date(void)
 {
 	time_t now = time(0);
-	dt = ctime(&now);
+	dt = GetCurrentTime();
 	return dt;
 }
 
@@ -170,7 +170,7 @@ void mobile::viewHistory(void)
     }
     else
     {
-        for (it = callHistory.begin(); it != callHistory.end(); ++it)
+        for (auto it = callHistory.begin(); it != callHistory.end(); ++it)
         {
             cout << "Number called: " << it->getNumber() << endl
                 << "Time of call: " << it->dt << endl;
@@ -180,15 +180,14 @@ void mobile::viewHistory(void)
 
 void mobile::callbyName(mobile& Human)
 {
-	string nameParam;
-	cout << "Please give the name which you want to call: ";
+    string nameParam;
+    cout << "Please give the name which you want to call: ";
     cin >> nameParam;
 
-	// Iterator, which iterate over the file
-	for (it = contact.begin(); it != contact.end(); ++it)
-	{
-		if (it->getName() == nameParam)
-		{
+    for (auto it = contact.begin(); it != contact.end(); ++it)
+    {
+        if (it->getName() == nameParam)
+        {
             it->callPerson(Human, 9);
             return;
         }
@@ -199,57 +198,74 @@ void mobile::callbyName(mobile& Human)
     }
 }
 
+void mobile::sendText(mobile& Human)
+{
+    Human.setName();
+    cout << "Please enter your text to send\n" << endl;
+    string text;
+    getline(cin, text);
+    ofstream mySMS;
+    mySMS.open("sms.txt", ios::out | ios:: binary | ios::app);
+    string name = Human.getName();
+    mySMS << name << " - " << text << endl;
+    mySMS.close();
+}
+
+
 void mobile::fileRW(mobile& receiver)
 {
-   ifstream file("contact.txt", ios::in | ios::out | ios::app);
-   if (!file)
-   {
-       cerr << "File could not be opened\n";
-       return;
-   }
+    ifstream file("contact.txt", ios::in | ios::out | ios::app);
+    if (!file)
+    {
+        cerr << "File could not be opened\n";
+        return;
+    }
 
-   while(file >> receiver.name >> receiver.number)
-   {
-        contact.push_back(receiver);
-   }
+    while(file >> receiver.name >> receiver.number)
+    {
+         contact.push_back(receiver);
+    }
 }
 
 void mobile::favorite(void)
 {
-    for (it = callHistory.begin(); it != callHistory.end(); ++it)
+    // range-based loop, modern c++11 feature
+    for (auto& it:callHistory)
     {
-         a.push_back(it->getNumber());
+         numberKey.push_back(it.getNumber());
     }
 
-    if (a.size() == 0)
+    if (numberKey.size() == 0)
     {
-         cout << "You have No favourite number" << endl;
+         cout << "You have No favourite numberKey" << endl;
          return;
     }
     // count occurrences of every string
-    for (int i = 0; i < a.size(); i++)
+    for (auto i = 0; i < numberKey.size(); i++)
     {
-         map<string, int>::iterator it1 = m.find(a[i]);
+         auto it = myMap.find(numberKey[i]);
 
-         if (it1 == m.end())
+		 // Inserting elements as key-value pairs
+         if (it == myMap.end())
          {
-             m.insert(pair<string, int>(a[i], 1));
+             myMap.insert(pair<string, int>(numberKey[i], 1));
          }
          else
          {
-             m[a[i]] += 1;
+             myMap[numberKey[i]] += 1;
          }
     }
 
-    // find the max
-    map<string, int>::iterator it1 = m.begin();
-    for (map<string, int>::iterator it2 = m.begin(); it2 != m.end(); ++it2)
+    // find the max by traversing the associative array pair class
+    auto stationary = myMap.begin();
+    for (auto moving = myMap.begin(); moving != myMap.end(); ++moving)
     {
-        if (it2-> second > it1-> second)
-        it1 = it2;
+        if (moving->second > stationary->second)
+        {
+            stationary = moving;
+        }
     }
-    cout << "Your Favourite Number: " << it1-> first << endl;
-	// clear the buffered memory
-    m.clear();
-    a.clear();
+    cout << "Your Favourite number: " << stationary-> first << endl;
+    myMap.clear();
+    numberKey.clear();
 }

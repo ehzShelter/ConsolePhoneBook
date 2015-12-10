@@ -16,14 +16,12 @@ void mobile::bill(void)
 
 void mobile::load(void)
 {
-	fflush(stdout);
-
 	cout << "\n\n\n\n\n\n \t\t\t\t";
 	cout << "Call loading... \n" << endl;
 	cout << "\t\t\t\t";
 	for (int i = 1; i <= 16; i++)
 	{
-		for (int j = 0; j <= 19000000; j++){};
+		for (int j = 0; j <= 19000000; j++){ };
         cout << "\033[1;31m..\033[0m";
 	}
 	cout << " " << endl;
@@ -71,7 +69,7 @@ void mobile::callPerson(mobile& person, int choice)
     cout << "Calling to: " << getNumber() << endl;
     double amount = getCredit();
 
-    if (amount<= 0.0)
+    if (amount <= 0.0)
     {
         cout << "You don't have sufficient money\n";
         cout << "You have to recharge\n";
@@ -131,7 +129,7 @@ void mobile::viewHistory(void)
     }
     else
     {
-        for (it = callHistory.begin(); it != callHistory.end(); ++it)
+        for (auto it = callHistory.begin(); it != callHistory.end(); ++it)
         {
             cout << "Number called: " << it->getNumber() << endl
                 << "Time of call: " << it->dt << endl;
@@ -145,7 +143,7 @@ void mobile::callbyName(mobile& Human)
 	cout << "Please give the name which you want to call: ";
     cin >> nameParam;
 
-	for (it = contact.begin(); it != contact.end(); ++it)
+	for (auto it = contact.begin(); it != contact.end(); ++it)
 	{
 		if (it->getName() == nameParam)
 		{
@@ -159,56 +157,73 @@ void mobile::callbyName(mobile& Human)
     }
 }
 
+void mobile::sendText(mobile& Human)
+{
+    Human.setName();
+    cout << "Please enter your text to send\n" << endl;
+    string text;
+    getline(cin, text);
+    ofstream mySMS;
+    mySMS.open("sms.txt", ios::out | ios:: binary | ios::app);
+    string name = Human.getName();
+    mySMS << name << " - " << text << endl;
+    mySMS.close();
+}
+
+
 void mobile::fileRW(mobile& receiver)
 {
-   ifstream file("contact.txt", ios::in | ios::out | ios::app);
-   if (!file)
-   {
-       cerr << "File could not be opened\n";
-       return;
-   }
+    ifstream file("contact.txt", ios::in | ios::out | ios::app);
+    if (!file)
+    {
+        cerr << "File could not be opened\n";
+        return;
+    }
 
-   while(file >> receiver.name >> receiver.number)
-   {
-        contact.push_back(receiver);
-   }
+    while(file >> receiver.name >> receiver.number)
+    {
+         contact.push_back(receiver);
+    }
 }
 
 void mobile::favorite(void)
 {
-    for (it = callHistory.begin(); it != callHistory.end(); ++it)
+    // range-based loop, modern c++11 feature
+    for (auto& it:callHistory)
     {
-         a.push_back(it->getNumber());
+         numberKey.push_back(it.getNumber());
     }
 
-    if (a.size() == 0)
+    if (numberKey.size() == 0)
     {
-         cout << "You have No favourite number" << endl;
+         cout << "You have No favourite numberKey" << endl;
          return;
     }
     // count occurrences of every string
-    for (int i = 0; i < a.size(); i++)
+    for (auto i = 0; i < numberKey.size(); i++)
     {
-         map<string, int>::iterator it1 = m.find(a[i]);
+         auto it = myMap.find(numberKey[i]);
 
-         if (it1 == m.end())
+         if (it == myMap.end())
          {
-             m.insert(pair<string, int>(a[i], 1));
+             myMap.insert(pair<string, int>(numberKey[i], 1));
          }
          else
          {
-             m[a[i]] += 1;
+             myMap[numberKey[i]] += 1;
          }
     }
 
     // find the max
-    map<string, int>::iterator it1 = m.begin();
-    for (map<string, int>::iterator it2 = m.begin(); it2 != m.end(); ++it2)
+    auto stationary = myMap.begin();
+    for (auto moving = myMap.begin(); moving != myMap.end(); ++moving)
     {
-        if (it2-> second > it1-> second)
-        it1 = it2;
+        if (moving->second > stationary->second)
+        {
+            stationary = moving;
+        }
     }
-    cout << "Your Favourite Number: " << it1-> first << endl;
-    m.clear();
-    a.clear();
+    cout << "Your Favourite number: " << stationary-> first << endl;
+    myMap.clear();
+    numberKey.clear();
 }
