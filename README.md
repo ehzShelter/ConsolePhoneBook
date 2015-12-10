@@ -1,4 +1,4 @@
-### This is a console PhoneBook programm
+### This is a console PhoneBook program
 ### This is built on C++, also featured some C++11 functionality
 ### Such as Lambda, Regular Expression, Boost Library, OOP
 ### Moreover STL, MAP, DYNAMIC Vector, String Class
@@ -6,9 +6,9 @@
 ### We measure our call duration using single handle Using SIGINT
 ### We sanitize user value in more robust way
 ### With manual Exception Handling
-### The Project is deveoped using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
+### The Project is developed using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
 ### The Project has no memory-leak check with Valgrind(a handy memory debugger)
-### Finally, The code is pushed on github, you can check the code and report bugsj
+### Finally, The code is pushed on github, you can check the code and report bugs
 ### The Program has two edition >Linux >Windows will run on mac(POSIX) as well
 ### The program is open-sourced, any good suggestions will be highly appreciated
 
@@ -106,7 +106,7 @@ Lines       Words        Bytes       Modules
 
 
 ## We have designed our programm in four classes
-# One extra class we have used, which is used for INHERITENCE(Single Inheritence)
+# One extra class we have used, which is used for INHERITANCE(Single Inheritance)
 # The one base class named Input
 
 ## Base Class
