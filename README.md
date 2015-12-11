@@ -43,29 +43,29 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 
 ## Project in Progress(RC editions)
 
-Lines       Words        Bytes       Modules
+|Lines|       |Words|     | Bytes|      | Modules|
 
-   28        51           495         Phone.h
+  | 28|       | 51 |         | 495 |       | Phone.h|
 
-   47        91           816         mobile.h
+  | 47|       | 91 |         | 816 |       | mobile.h |
 
-   33        62           613         person.h
+  | 33|       | 62 |         | 613 |       | person.h|
 
-   47        86           904         userInput.h
+  | 47|       | 86 |         | 904 |       | userInput.h |
 
-   84       234          1747         Phone.cpp
+  | 84|       |234 |         |1747 |       | Phone.cpp|
 
-   62       227          1783         main.cpp
+  | 62|       |227 |         |1783 |       | main.cpp |
 
-  229       617          4153         mobile.cpp
+  |229|       |617 |         |4153 |       | mobile.cpp |
 
-   97       234          2043         person.cpp
+  | 97|       |234 |         |2043 |       | person.cpp |
 
-   90       171          1697         userInput.cpp
+  | 90|       |171 |         |1697 |       | userInput.cpp  |
 
 ..............................................
 
-  719      1780          14288 total
+  |719|      |1780 |         |14288| |total|
 
 ## Programm main function has 14(fourteen) different cases for
 ###    different purposes
