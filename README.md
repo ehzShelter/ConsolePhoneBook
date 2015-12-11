@@ -125,6 +125,8 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 
 >        string phoneModel;
 
+>        string choice;
+
 >
 
 >    public:
@@ -160,6 +162,10 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 >        void setPhoneModel(void);
 
 >        string getPhoneModel(void);
+
+>        void setChoice(void);
+
+>        int getChoice(void);
 
 >    };
 
