@@ -209,6 +209,7 @@ void mobile::sendText(mobile& Human)
     string name = Human.getName();
     mySMS << name << " - " << text << endl;
     mySMS.close();
+	cout << "message sent !!" << endl;
 }
 
 
