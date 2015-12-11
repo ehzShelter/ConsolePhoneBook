@@ -87,4 +87,12 @@ string Input::getPhoneModel(void)
     return phoneModel;
 }
 
+void Input::setChoice(void)
+{
+    this->choice = inputData("choice", "\\d+");
+}
 
+int Input::getChoice(void)
+{
+    return stoi(choice);
+}

@@ -2,8 +2,6 @@
 #include "Phone.h"
 #include "person.h"
 #include "userInput.h"
-#include <vector>
-#include <limits.h>
 
 int main(void)
 {
@@ -12,6 +10,7 @@ int main(void)
     person human;
 
     client.fileRW(client);
+    Input data;
 
     int choice;
 	cout << "Please press desired key to continue ... \n\n ";
@@ -35,9 +34,8 @@ int main(void)
             << " 14: Favorite\n"
 			<< " 0 or any char || string : quit\n\n";
 
-		cout << "Command: ";
-		cin >> choice;
-        cin.ignore(INT_MAX, '\n');
+        data.setChoice();
+        choice = data.getChoice();
 		switch (choice)
 		{
 			case 1: client.callPerson(client,1); break;

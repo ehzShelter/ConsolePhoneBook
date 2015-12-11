@@ -2,14 +2,13 @@
 #include "Phone.h"
 #include "person.h"
 #include "userInput.h"
-#include <vector>
-#include <limits.h>
 
 int main(void)
 {
 	mobile client;
 	Phone phoneRecord;
     person human;
+	Input data;
 
     client.fileRW(client);
 
@@ -35,9 +34,8 @@ int main(void)
             << " 14: Favorite\n"
 			<< " 0 or any char || string : quit\n\n";
 
-		cout << "Command: ";
-		cin >> choice;
-        cin.ignore(INT_MAX, '\n');
+		data.setChoice();
+		choice = data.getChoice();
 		switch (choice)
 		{
 			case 1: client.callPerson(client,1); break;

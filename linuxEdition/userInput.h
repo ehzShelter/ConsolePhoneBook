@@ -23,6 +23,7 @@ protected:
     string state;
     string zipCode;
     string phoneModel;
+    string choice;
 
 public:
     bool validate(const string&, const string&);
@@ -42,6 +43,8 @@ public:
     string getZipCode(void);
     void setPhoneModel(void);
     string getPhoneModel(void);
+    void setChoice(void);
+    int getChoice(void);
 };
 
 #endif
