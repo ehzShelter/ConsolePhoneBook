@@ -223,7 +223,7 @@ void mobile::favorite(void)
             stationary = moving;
         }
     }
-    cout << "Your Favourite number: " << stationary-> first << endl;
+    cout << "Your Favourite number: " << stationary->first << endl;
     myMap.clear();
     numberKey.clear();
 }
