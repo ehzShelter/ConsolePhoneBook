@@ -206,6 +206,7 @@ void mobile::callbyName(mobile& Human)
 void mobile::sendText(mobile& Human)
 {
 	Human.setName();
+	Human.setNumber();
 	cout << "Please enter your text to send\n" << endl;
 	Human.setText();
 
@@ -258,8 +259,6 @@ void mobile::sendText(mobile& Human)
 		cout << "your " << smsCredit << " taka has been detached";
 		
 	}
-
-	
 }
 
 
