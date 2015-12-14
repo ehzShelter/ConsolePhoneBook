@@ -1,6 +1,6 @@
 #include "mobile.h"
 #include "userInput.h"
-
+#define SMS_RATE .5
 #define TEXTLIMIT 100
 
 bool stop;
@@ -175,6 +175,7 @@ void mobile::sendText(mobile& Human)
     mySMS << name << " - " << text << endl;
     mySMS.close();
 
+    double smsCredit;
     if (text.length() > TEXTLIMIT)
     {
         int size = text.length() / TEXTLIMIT;
@@ -196,14 +197,22 @@ void mobile::sendText(mobile& Human)
             cout << j << endl;
             k++;
         }
+
         cout << "\n\n\nMulti-Threaded TextMEssage sent !!!\n";
+
+        smsCredit = SMS_RATE * size;
+        credit = credit - smsCredit;
+        cout << "your " << smsCredit << " taka has been detached" << endl;
     }
     else
     {
         cout << text;
         cout << "\n\n\nTextMEssage sent !!!\n";
-    }
 
+        smsCredit =  SMS_RATE;
+        credit = credit - smsCredit;
+        cout << "your " << smsCredit << " taka has been detached" << endl;
+    }
 }
 
 
