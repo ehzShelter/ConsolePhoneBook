@@ -127,6 +127,10 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 
 >        string choice;
 
+>        string text;
+
+>        string Amount;
+
 >
 
 >    public:
@@ -166,6 +170,14 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 >        void setChoice(void);
 
 >        int getChoice(void);
+
+>        void setAmount(void);
+
+>        int getAmount(void);
+
+>        void setText(void);
+
+>        string getText(void);
 
 >    };
 
