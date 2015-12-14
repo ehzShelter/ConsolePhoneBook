@@ -91,8 +91,27 @@ void Input::setChoice(void)
 {
     this->choice = inputData("choice", "\\d+");
 }
-
 int Input::getChoice(void)
 {
     return stoi(choice);
 }
+
+void Input::setAmount(void)
+{
+    this->Amount = inputData("Amount", "\\d+");
+}
+int Input::getAmount(void)
+{
+    return stoi(Amount);
+}
+
+void Input::setText(void)
+{
+    this->text = inputData("text", ".+");
+}
+
+string Input::getText(void)
+{
+    return text;
+}
+

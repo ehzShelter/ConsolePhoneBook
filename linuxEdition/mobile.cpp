@@ -1,6 +1,8 @@
 #include "mobile.h"
 #include "userInput.h"
 
+#define TEXTLIMIT 100
+
 bool stop;
 
 void mobile::bill(void)
@@ -87,17 +89,19 @@ void mobile::callPerson(mobile& person, int choice)
 
 void mobile::addCredit(void)
 {
-    double addCredit;
+    Input addCredit;
 	cout << "Please give the amount of Money: \n";
-	cin >> addCredit;
-	if (addCredit > CREDIT_LIMIT)
+    addCredit.setAmount();
+    int Recharge = addCredit.getAmount();
+
+    if (Recharge > CREDIT_LIMIT | Recharge <= 0)
 	{
-		cout << "You cannot more than 500tk\n";
+		cout << "Invalid Amount\n";
 	}
 	else
 	{
-        credit += addCredit;
-		cout << "Credit " << addCredit << " succesfully added" << endl;
+        credit += Recharge;
+		cout << "Credit " << Recharge << " succesfully added" << endl;
 	}
 }
 
@@ -161,15 +165,45 @@ void mobile::sendText(mobile& Human)
 {
     Human.setName();
     cout << "Please enter your text to send\n" << endl;
-    string text;
-    getline(cin, text);
+    Human.setText();
+
+    string text = Human.getText();
+
     ofstream mySMS;
-    mySMS.open("sms.txt", ios::out | ios:: binary | ios::app);
+    mySMS.open("sms.txt", ios::out | ios::binary | ios::app);
     string name = Human.getName();
     mySMS << name << " - " << text << endl;
     mySMS.close();
 
-    cout << "message sent !!!" << endl;
+    if (text.length() > TEXTLIMIT)
+    {
+        int size = text.length() / TEXTLIMIT;
+        int i = 0;
+
+        vector<string> tokens; // Create vector to hold our words
+        while (i <= size)
+        {
+            string buf = text.substr(i * TEXTLIMIT, TEXTLIMIT); // Have a buffer string
+            tokens.push_back(buf);
+            i++;
+        }
+
+        int k = 1;
+        cout << endl;
+        for (const auto j:tokens)
+        {
+            cout << "Thread: " <<  k << endl;
+            cout << j << endl;
+            k++;
+        }
+        cout << "\n\n\nMulti-Threaded TextMEssage sent !!!\n";
+    }
+    else
+    {
+        cout << text;
+        cout << "\n\n\nTextMEssage sent !!!\n";
+    }
+
 }
 
 

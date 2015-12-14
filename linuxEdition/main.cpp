@@ -32,7 +32,7 @@ int main(void)
             << " 12: Average length of call\n"
             << " 13: TotalCredit\n"
             << " 14: Favorite\n"
-			<< " 0 or any char || string : quit\n\n";
+			<< " 0 : quit\n\n";
 
         data.setChoice();
         choice = data.getChoice();

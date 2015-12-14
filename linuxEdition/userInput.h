@@ -24,6 +24,8 @@ protected:
     string zipCode;
     string phoneModel;
     string choice;
+    string text;
+    string Amount;
 
 public:
     bool validate(const string&, const string&);
@@ -45,6 +47,10 @@ public:
     string getPhoneModel(void);
     void setChoice(void);
     int getChoice(void);
+    void setAmount(void);
+    int getAmount(void);
+    void setText(void);
+    string getText(void);
 };
 
 #endif

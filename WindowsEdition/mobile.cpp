@@ -1,5 +1,7 @@
 #include "mobile.h"
 #include "userInput.h"
+#define TEXTLIMIT 100
+
 
 // Stops the call time
 bool stop;
@@ -60,7 +62,7 @@ void mobile::load(void)
 string mobile::date(void)
 {
 	time_t now = time(0);
-	dt = GetCurrentTime();
+	dt = ctime(&now);
 	return dt;
 }
 
@@ -128,17 +130,19 @@ void mobile::callPerson(mobile& person, int choice)
 
 void mobile::addCredit(void)
 {
-    double addCredit;
+	Input addCredit;
 	cout << "Please give the amount of Money: \n";
-	cin >> addCredit;
-	if (addCredit > CREDIT_LIMIT)
+	addCredit.setAmount();
+	int Recharge = addCredit.getAmount();
+
+	if (Recharge > CREDIT_LIMIT | Recharge <= 0)
 	{
-		cout << "You cannot more than 500tk\n";
+		cout << "Invalid Amount\n";
 	}
 	else
 	{
-        credit += addCredit;
-		cout << "Credit " << addCredit << " succesfully added" << endl;
+		credit += Recharge;
+		cout << "Credit " << Recharge << " succesfully added" << endl;
 	}
 }
 
@@ -200,16 +204,49 @@ void mobile::callbyName(mobile& Human)
 
 void mobile::sendText(mobile& Human)
 {
-    Human.setName();
-    cout << "Please enter your text to send\n" << endl;
-    string text;
-    getline(cin, text);
-    ofstream mySMS;
-    mySMS.open("sms.txt", ios::out | ios:: binary | ios::app);
-    string name = Human.getName();
-    mySMS << name << " - " << text << endl;
-    mySMS.close();
-	cout << "message sent !!" << endl;
+	Human.setName();
+	cout << "Please enter your text to send\n" << endl;
+	Human.setText();
+
+	string text = Human.getText();
+
+	ofstream mySMS;
+	mySMS.open("sms.txt", ios::out | ios::binary | ios::app);
+	string name = Human.getName();
+	mySMS << name << " - " << text << endl;
+	mySMS.close();
+
+	if (text.length() > TEXTLIMIT)
+	{
+		int size = text.length() / TEXTLIMIT;
+		int i = 0;
+
+		vector<string> tokens; // Create vector to hold our words
+		while (i <= size)
+		{
+			string buf = text.substr(i * TEXTLIMIT, TEXTLIMIT); // Have a buffer string
+			tokens.push_back(buf);
+			i++;
+		}
+
+		int k = 1;
+		cout << endl;
+		for (const auto j : tokens)
+		{
+			cout << "Thread: " << k << endl;
+			cout << j << endl;
+			k++;
+		}
+
+		cout << "\n\n\n MULTI-threaded TextMEssage sent !!!\n";
+	}
+	else
+	{
+		cout << text;
+		cout << "\n\n\nTextMEssage sent !!!\n";
+	}
+
+	
 }
 
 
