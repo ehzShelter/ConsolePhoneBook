@@ -144,8 +144,9 @@ void mobile::viewHistory(void)
 void mobile::callbyName(mobile& Human)
 {
 	string nameParam;
-	cout << "Please give the name which you want to call: ";
-    cin >> nameParam;
+    Human.setName();
+
+    nameParam = Human.getName();
 
 	for (auto it = contact.begin(); it != contact.end(); ++it)
 	{
