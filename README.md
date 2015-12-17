@@ -3,8 +3,8 @@
 ### Such as Lambda, Regular Expression, Boost Library, OOP
 ### Moreover STL, MAP, DYNAMIC Vector, String Class
 ### Used file for persistent data(In need of databases too)
-### We measure our call duration using single handle Using SIGINT
-### We sanitize user value in more robust way
+### It measures our call duration using single handle Using SIGINT
+### Sanitizing user value in more robust way
 ### With manual Exception Handling
 ### The Project is developed using Clang++ based on LLVM(low-level virtual machine) and Visual Studio 2015
 ### The Project has no memory-leak check with Valgrind(a handy memory debugger)
