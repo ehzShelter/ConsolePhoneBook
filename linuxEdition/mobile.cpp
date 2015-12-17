@@ -203,7 +203,7 @@ void mobile::sendText(mobile& Human)
 
         cout << "\n\n\nMulti-Threaded TextMEssage sent !!!\n";
 
-        smsCredit = SMS_RATE * size;
+        smsCredit = double(SMS_RATE * size) + SMS_RATE;
         credit = credit - smsCredit;
         cout << "your " << smsCredit << " taka has been detached" << endl;
     }
@@ -254,7 +254,7 @@ void mobile::favorite(void)
 
          if (it == myMap.end())
          {
-             myMap.insert(pair<string, int>(numberKey[i], 1));
+             myMap.emplace(numberKey[i], 1);
          }
          else
          {
@@ -271,7 +271,18 @@ void mobile::favorite(void)
             stationary = moving;
         }
     }
-    cout << "Your Favourite number: " << stationary->first << endl;
+
+    cout << "Call lists contains:" << endl;
+    for (auto& x: myMap)
+    {
+        cout << x.first << " called  " << x.second << " times"
+            << endl;
+    }
+
+    cout << "Your Favourite number: " << stationary->first << endl
+        << " and this number is called " << myMap.at(stationary->first)
+        << " times " << endl;
+
     myMap.clear();
     numberKey.clear();
 }
