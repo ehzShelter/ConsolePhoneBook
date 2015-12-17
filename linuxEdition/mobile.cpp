@@ -148,7 +148,7 @@ void mobile::callbyName(mobile& Human)
 
     nameParam = Human.getName();
 
-	for (auto it = contact.begin(); it != contact.end(); ++it)
+	for (it = contact.begin(); it != contact.end(); ++it)
 	{
 		if (it->getName() == nameParam)
 		{
@@ -156,7 +156,8 @@ void mobile::callbyName(mobile& Human)
             return;
         }
     }
-    if (it == contact.end())
+
+    if (it ==  contact.end())
     {
         cout << "number not found!!" << endl;
     }
