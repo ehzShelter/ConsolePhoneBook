@@ -18,21 +18,21 @@ int main(void)
 	do
 	{
 		cout << "\nMENU\n\n"
-			<< " 1 : for phone call\n"
-			<< " 2 : add new contact\n"
-			<< " 3 : find and change name\n"
-			<< " 4 : Caution! Delete entire Phonebook\n"
-			<< " 5 : Want to add credit\n"
-			<< " 6 : Want to know your credit\n"
-			<< " 7 : History\n"
-            << " 8 : Register new Person\n"
-            << " 9 : call by name\n"
-            << " 10: text messaging\n"
-        	<< " 11: total cost of last month\n"
-            << " 12: Average length of call\n"
-            << " 13: TotalCredit\n"
-            << " 14: Favorite\n"
-			<< " 0 : quit\n\n";
+         << " 1 : for phone call\n"
+         << " 2 : add new contact\n"
+         << " 3 : find and change name\n"
+         << " 4 : Caution! Delete entire Phonebook\n"
+         << " 5 : Want to add credit\n"
+         << " 6 : Want to know your credit\n"
+         << " 7 : History\n"
+         << " 8 : Register new Person\n"
+         << " 9 : call by name\n"
+         << " 10: text messaging\n"
+         << " 11: total cost of last month\n"
+         << " 12: Average length of call\n"
+         << " 13: TotalCredit\n"
+         << " 14: Favorite\n"
+         << " 0 : quit\n\n";
 
         data.setChoice();
         choice = data.getChoice();
