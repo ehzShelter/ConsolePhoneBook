@@ -10,19 +10,18 @@
 #include "userInput.h"
 using namespace std;
 
-class Phone : public Input
-{
+class Phone : public Input {
 private:
-	vector< Phone >object;
-	vector< Phone >::iterator it;
+    vector<Phone> object;
+    vector<Phone>::iterator it;
 
 public:
-	void findAndChange(void);
+    void findAndChange(void);
     void callbyName(void);
-	void eraseEntireBook(void);
-	void addNewContact(Phone&);
-	void printException(void);
-    void fileRW(string &);
+    void eraseEntireBook(void);
+    void addNewContact(Phone&);
+    void printException(void);
+    void fileRW(string&);
 };
 
 #endif

@@ -10,8 +10,7 @@
 #include <regex>
 using namespace std;
 
-class Input
-{
+class Input {
 protected:
     static int totalSecond;
     static int numberOfCalls;
@@ -29,7 +28,7 @@ protected:
 
 public:
     bool validate(const string&, const string&);
-    string inputData(const string&,const string&);
+    string inputData(const string&, const string&);
 
     void setName(void);
     string getName(void);

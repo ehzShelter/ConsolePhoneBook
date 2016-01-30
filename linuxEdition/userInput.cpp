@@ -1,12 +1,12 @@
 #include "userInput.h"
 
-bool Input::validate(const string &data, const string &expression)
+bool Input::validate(const string& data, const string& expression)
 {
     regex validationExpression = regex(expression);
     return regex_match(data, validationExpression);
 }
 
-string Input::inputData(const string &fieldName, const string &expression)
+string Input::inputData(const string& fieldName, const string& expression)
 {
     string data;
 
@@ -14,8 +14,7 @@ string Input::inputData(const string &fieldName, const string &expression)
     getline(cin, data);
 
     // validate the data
-    while ( !(validate(data, expression)))
-    {
+    while (!(validate(data, expression))) {
         cout << "Invalid " << fieldName << ".\n";
         cout << "Enter " << fieldName << ": ";
 
@@ -114,4 +113,3 @@ string Input::getText(void)
 {
     return text;
 }
-
