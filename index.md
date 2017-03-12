@@ -34,7 +34,7 @@ To compile in Windows, Make sure you compiler must support ISO C++11 Standard
 >> Github URL is given below
 
 
-    https://github.com/ehzShelter/ConsolePhoneBook
+    https://github.com/ehzawad/ConsolePhoneBook
 
 >> For Windows just used windows.h, for linux used unistd.h
 
@@ -178,11 +178,11 @@ Lines       Words        Bytes       Modules
 
 ## Running in Linux
 
-![Running Program](https://raw.githubusercontent.com/ehzShelter/ConsolePhoneBook/master/running_program.png)
+![Running Program](https://raw.githubusercontent.com/ehzawad/ConsolePhoneBook/master/running_program.png)
 
-![History](https://raw.githubusercontent.com/ehzShelter/ConsolePhoneBook/master/history.png)
+![History](https://raw.githubusercontent.com/ehzawad/ConsolePhoneBook/master/history.png)
 
-![Memory Management](https://raw.githubusercontent.com/ehzShelter/ConsolePhoneBook/master/no_memoryLeak.png)
+![Memory Management](https://raw.githubusercontent.com/ehzawad/ConsolePhoneBook/master/no_memoryLeak.png)
 
 ## Class one
 >    class mobile : public Input
@@ -315,6 +315,6 @@ Modern C++11 feature auto, range-based loop, regex....etc
 #### Windows Screenshot
 >Fancy
 
-![Windows](https://raw.githubusercontent.com/ehzShelter/ConsolePhoneBook/master/VisualStudio.png)
+![Windows](https://raw.githubusercontent.com/ehzawad/ConsolePhoneBook/master/VisualStudio.png)
 
 ## Any query, email me, mechezawad@outlook.com, for bugs, create issues in Github
